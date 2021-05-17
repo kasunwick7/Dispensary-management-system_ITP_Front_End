@@ -1,0 +1,57 @@
+<!--<div class="container">
+  <H1>Login</H1>
+</div>
+-->
+<!--
+<div class="container">
+  <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+
+  <div>
+    User Name : <input type="text" name="username" [(ngModel)]="username">
+    Password  : <input type="password" name="password" [(ngModel)]="password">
+
+
+    <button (click)=handleLogin() class="btn btn-success">Login</button>
+
+  </div>
+</div>-->
+
+<div class="container">
+  <br><br>
+  <div class="row">
+    <div class="col-md-5">
+
+      <div class="login-box">
+
+
+        <h1>Login</h1>
+
+        <p>Username</p>
+        <input type="text" name="username" [(ngModel)]="username">
+        <div id = "rsd"></div><br>
+        <p>Password</p>
+        <input type="password" name="password" [(ngModel)]="password">
+        <div id = "rs"></div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button (click)=handleLogin() class="btnn">Login</button>
+        <br><br>
+        <div class="alert alert-warning" *ngIf='invalidLogin'>{{errorMessage}}</div>
+      </div>
+
+
+
+
+    </div>
+    <div class="col-md-5 ppp">
+      <br><br><br><br><br><br><br><br><br><br>
+      <h1>Pharmacy Management System</h1>
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+  </div>
+
+
+
+
+
+</div>
+
+

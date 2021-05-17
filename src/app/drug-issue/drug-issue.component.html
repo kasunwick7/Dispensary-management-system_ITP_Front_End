@@ -1,0 +1,64 @@
+
+<app-header></app-header>
+
+<div class="row">
+  <div class="col-md-1">
+    <app-nav></app-nav>
+  </div>
+  <div class="col-md-11 text-left">
+
+
+    <br><br>
+
+    <div class="container">
+
+      <div class="alert alert-light" role="alert">
+        <h3><i class="fas fa-clinic-medical"></i> Drug Issuing and Billing</h3>
+      </div>
+
+
+    </div>
+
+    <div class="container">
+      <div class="alert alert-success" *ngIf='message'>{{message}}</div>
+    </div>
+
+    <div class="container">
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Drug Name</th>
+          <th>S.Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--for (Drug drug: drugs) {  -->
+        <tr *ngFor="let drug of drugs">
+          <td>{{drug.drugName}}</td>
+          <td>{{drug.sPrice}}</td>
+          <td>{{drug.quantity}}</td>
+          <td>{{drug.total}}</td>
+          <td><button (click)="updateDrug(drug.id)" class="btn btn-success">Update</button></td>
+          <td><button (click)="deleteDrug(drug.id)" class="btn btn-warning">Delete</button></td>
+
+        </tr>
+        <!--}-->
+        </tbody>
+
+      </table>
+
+      <div class="row">
+        <button (click)="addDrug()" class="btn btn-success">Add Drug</button>
+      </div>
+
+
+
+    </div>
+
+  </div>
+</div>
+

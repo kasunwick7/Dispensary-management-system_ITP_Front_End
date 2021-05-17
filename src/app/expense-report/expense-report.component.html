@@ -1,0 +1,48 @@
+<br><br>
+<div class="container">
+    <div class = "reportBackGround" id = "Expense-report-download">
+        <div class="alert alert-light" role="alert">
+            <h1><i class="fas fa-clinic-medical"></i> Siddhaveda Ayurvedic Medical Center</h1>
+            <br>
+            <h3>Expense Report </h3>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Expense ID</th>
+                    <th> Date</th>
+                    <th>Quantity</th>
+                    <th>Category</th>
+                    <th>Description</th>
+            
+                </tr>
+            </thead>
+            <tbody>
+        
+                <tr *ngFor="let expense of expenses">
+                    <td>{{expense.id}}</td>
+                    <td>{{expense.date | date | uppercase}}</td>
+                    <td>{{expense.quantity}}</td>
+                    <td>{{expense.category}}</td>
+                    <td>{{expense.description}}</td>
+
+
+                </tr>
+            
+            </tbody>
+
+        </table>
+    </div>
+        <div class="row">
+            <button (click)="generateReport()" class="btn btn-success">Generate Report</button>
+        </div>
+
+  </div>
+  
+  
+
+
+
+
+

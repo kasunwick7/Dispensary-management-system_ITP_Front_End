@@ -1,0 +1,28 @@
+<div class="sidebar">
+  <a href="#" routerLink="/dash">
+    <i class="fas fa-chart-line"></i> &nbsp;Dashboard</a>
+
+  <a href="#" *ngIf="med" routerLink="/todos">
+    <i class="fas fa-tablets"></i> &nbsp;Medicine</a>
+
+  <a href="#" *ngIf="doc" routerLink="/doc">
+    <i class="fas fa-user-md"></i> &nbsp;Doctors</a>
+
+  <a href="#" *ngIf="patient" routerLink="/patient">
+    <i class="fas fa-procedures"></i> &nbsp;Patient</a>
+
+  <a href="#" *ngIf="emp" routerLink="/emp">
+    <i class="fas fa-user"></i> &nbsp;Employee</a>
+
+  <a href="#" *ngIf="fin" routerLink="/fin">
+    <i class="fas fa-hand-holding-usd"></i> &nbsp;Finance</a>
+
+  <a href="#" *ngIf="sup" routerLink="/suppliers">
+    <i class="fas fa-ambulance"></i> &nbsp;Suppliers</a>
+
+  <a href="#" *ngIf="bill" routerLink="/drugs">
+    <i class="fas fa-file-invoice-dollar"></i> &nbsp;Drug issue</a>
+
+  <a href="#" *ngIf="order" routerLink="/order">
+    <i class="fas fa-business-time"></i> &nbsp;Order Stock</a>
+</div>

@@ -1,0 +1,51 @@
+
+<br><br>
+<div class="container">
+  <H1>Medicine Details</H1></div>
+
+<div class="container">
+  <div class="alert alert-warning" *ngIf="todoForm.dirty && todoForm.invalid">Enter valid values</div>
+  <div class="alert alert-warning" *ngIf="todoForm.dirty && targetDate.invalid">Enter valid Target Date</div>
+  <div class="alert alert-warning" *ngIf="todoForm.dirty && description.invalid">Enter atleast 5 characters in Description</div>
+
+  <form (ngSubmit)="!todoForm.invalid && saveTodo()" #todoForm="ngForm">
+    <fieldset class="form-group">
+      <label>Name</label>
+      <input type="text" #description="ngModel"
+             [(ngModel)]="todo.name" class="form-control"
+             name="Name" required="required" minlength="5">
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label>Category</label>
+      <input type="text" #description="ngModel"
+             [(ngModel)]="todo.category" class="form-control"
+             name="Category" required="required" minlength="5">
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label>Quantity</label>
+      <input type="text" #descripti="ngModel"
+             [(ngModel)]="todo.qty" class="form-control"
+             name="qty" required="required">
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label>MFD Date</label>
+      <input type="date" #targetDate="ngModel"
+             [ngModel]="todo.mfd | date:'yyyy-MM-dd' "
+             (ngModelChange)="todo.mfd = $event"
+             class="form-control" name="MFD Date" required="required" >
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label>EXP Date</label>
+      <input type="date" #targetDate="ngModel"
+             [ngModel]="todo.exp | date:'yyyy-MM-dd' "
+             (ngModelChange)="todo.exp = $event"
+             class="form-control" name="EXP Date" required="required" >
+    </fieldset>
+
+    <button type="submit" class="btn btn-success">Save</button>
+  </form>
+</div>

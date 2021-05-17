@@ -1,0 +1,60 @@
+<!-- <app-header></app-header>
+
+<div class="row">
+  <div class="col-md-2">
+    <app-nav></app-nav>
+  </div>
+  <div class="col-md-10 text-left">
+    <br>
+  </div>
+</div> -->
+
+<br><br>
+<div class="container">
+ <H1>Add New Expenses</H1>
+</div>
+
+<div class="container">
+ <div class="alert alert-warning" *ngIf="expenseForm.dirty && expenseForm.invalid">Enter valid values</div>
+ <div class="alert alert-warning" *ngIf="expenseForm.dirty && date.invalid">Enter valid Target Date</div>
+ <div class="alert alert-warning" *ngIf="expenseForm.dirty && quantity.invalid">Enter valid quantity</div>
+ <div class="alert alert-warning" *ngIf="expenseForm.dirty && category.invalid">Enter atleast 5 characters in Category</div>
+ <div class="alert alert-warning" *ngIf="expenseForm.dirty && description.invalid">Enter atleast 5 characters in Description</div>
+
+ <form (ngSubmit)="!expenseForm.invalid && saveExpense()" #expenseForm="ngForm">
+
+
+   <fieldset class="form-group">
+     <label> Date</label>
+     <input type="date" #targetDate="ngModel"
+            [ngModel]="expense.date | date:'yyyy-MM-dd' "
+            (ngModelChange)="expense.date = $event"
+            class="form-control" name="date" required="required" >
+   </fieldset>
+
+   <fieldset class="form-group">
+     <label>Quantity</label>
+     <input type="number" #quantity="ngModel"
+            [(ngModel)]="expense.quantity" class="form-control"
+            name="quantity" required="required">
+   </fieldset>
+
+   <fieldset class="form-group">
+     <label>Category</label>
+     <input type="text" #category="ngModel"
+            [(ngModel)]="expense.category" class="form-control"
+            name="category" required="required" minlength="5">
+   </fieldset>
+
+   <fieldset class="form-group">
+     <label>Description</label>
+     <input type="text" #description="ngModel"
+            [(ngModel)]="expense.description" class="form-control"
+            name="description" required="required" minlength="5">
+   </fieldset>
+
+   <button type="submit" class="btn btn-success">Save</button>
+ </form>
+</div>
+
+

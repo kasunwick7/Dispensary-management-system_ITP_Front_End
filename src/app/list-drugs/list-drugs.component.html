@@ -1,0 +1,42 @@
+<div class="container">
+  <H1>Drug Issuing and Billing</H1></div>
+
+<div class="container">
+  <!--<div class="alert alert-warning" *ngIf="todoForm.dirty && todoForm.invalid">Enter valid values</div>
+  <div class="alert alert-warning" *ngIf="todoForm.dirty && targetDate.invalid">Enter valid Target Date</div>
+  <div class="alert alert-warning" *ngIf="todoForm.dirty && description.invalid">Enter atleast 5 characters in Description</div>-->
+
+  <form (ngSubmit)="!drugForm.invalid && saveDrug()" #drugForm="ngForm">
+    <fieldset class="form-group">
+      <label>Drug Name</label>
+      <input type="text" #drugName="ngModel"
+             [(ngModel)]="drug.drugName" class="form-control"
+             name="drugName" required="required" minlength="10">
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label>S.Price</label>
+      <input type="number" #sPrice="ngModel"
+             [(ngModel)]="drug.sPrice" class="form-control"
+             name="sPrice" required="required" minlength="10">
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label>Quantity</label>
+      <input type="number" #quantity="ngModel"
+             [(ngModel)]="drug.quantity" class="form-control"
+             name="quantity" required="required" minlength="10">
+    </fieldset>
+
+    <fieldset class="form-group">
+      <label>Total</label>
+      <input type="number" #total="ngModel"
+             [(ngModel)]="drug.total" class="form-control"
+             name="total" required="required" minlength="10">
+    </fieldset>
+
+    <button type="submit" class="btn btn-success">Save</button>
+  </form>
+</div>
+
+

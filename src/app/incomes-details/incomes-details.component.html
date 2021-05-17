@@ -1,0 +1,82 @@
+<app-header></app-header>
+
+<div class="row">
+  <div class="col-md-1">
+    <app-nav></app-nav>
+  </div>
+  <div class="col-md-11 text-left">
+
+
+    <br><br>
+
+
+
+    <div class="container">
+
+      <div class="alert alert-light" role="alert">
+        <h3><i class="fas fa-clinic-medical"></i> Income Details</h3>
+      </div>
+
+
+    </div>
+
+    <div class="container">
+      <div class="alert alert-success" *ngIf='message'>{{message}}</div>
+    </div>
+
+     <!-- <div class="container">
+        <form class="form-inline">
+          
+            <input type="text" class="form-control" name="categoryN"  [(ngModel)]="categoryN" required="required" placeholder="Enter Category" >
+            <input type="submit" (click) = findCategory(categoryN) value="search" class="btn btn-primary">
+        
+        </form>
+      </div> -->
+
+  
+  
+      <div class="container">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Income ID</th>
+            <th> Date</th>
+            <th>Quantity</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+          </thead>
+          <tbody>
+       
+          <tr *ngFor="let income of incomes">
+            <td>{{income.id}}</td>
+            <td>{{income.date | date | uppercase}}</td>
+            <td>{{income.quantity}}</td>
+            <td>{{income.category}}</td>
+            <td>{{income.description}}</td>
+            <td><button (click)="updateIncome(income.id)" class="btn btn-success">Update</button></td>
+            <td><button (click)="deleteIncome(income.id)" class="btn btn-warning">Delete</button></td>
+  
+          </tr>
+          
+          </tbody>
+  
+        </table>
+  
+        <div class="row">
+          <button (click)="addIncome()" class="btn btn-success">Add</button>&nbsp;
+          <button (click)="report()" class="btn btn-success">Generate Report</button>
+      
+        </div>
+  
+  
+  
+      </div>
+
+  </div>
+</div> 
+
+
+ 
